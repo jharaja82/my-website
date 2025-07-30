@@ -1,155 +1,286 @@
-   body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #e8edee;
+
+ body {
+        background-color: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        min-height: 100vh; 
+        margin: 0; 
+        padding: 0; 
+        box-sizing: border-box; 
+        font-family: Arial, sans-serif;
     }
 
     .body-frame {
-      margin: 30px;
-      padding: 20px;
-      border: 5px solid #333;
-      border-radius: 10px;
-      box-shadow: 0px 6px 4px -2px #444;
-      background-color: #e8edee;
-      background-color: #;
-      color: #333;
-      line-height: 1.6;
+        width: 210mm; 
+        background-color: white; 
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+        padding: 20mm; 
+        box-sizing: border-box; 
+        margin: 30px auto;
+        border: 5px solid #333;
+        border-radius: 10px;
+        box-shadow: 0px 6px 4px -2px #444, 0 0 10px rgba(0, 0, 0, 0.1); 
+        display: flex; 
+        flex-direction: column; 
+        justify-content: flex-start;
     }
 
     header {
-      display: flex;
-      align-items: left;
-      justify-content: left;
-      background-color: #e8edee;
-      padding: 15px;
-      border-bottom: 5px solid #333;
-      box-shadow: 0px 6px 4px -2px #444;
-      position: relative;
-      gap: 20px;
-      text-align: left;
+        display: flex;
+        align-items: center; 
+        justify-content: flex-start; 
+        background-color: white;
+        padding: px;
+        left: 0px;
+        right: 0px;
+        border-bottom: 5px solid #333;
+      
+        position: relative;
+        gap: 20px;
+        text-align: left;
     }
 
     header::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 50%;
-      height: 4px;
-      background: #333;
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50%;
+        height: 4px;
+        background: #333;
     }
 
     .profile img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
+        top: 5px;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+    .profile img:hover {
+        transform: scale(1.05); 
     }
 
-    .profile-info{
-      text-align: center;
-      
+    .profile-info {
+        text-align: left;
     }
 
     header h1 {
-      margin: 0;
-      font-size: 2em;
+        margin: 0;
+        font-size: 2em;
     }
 
-   /* header h4 {
-      margin: 5px 0 0 0;
-      font-weight: normal;
-      align-items: center;
-  
-    }*/
+    header h4 { /* आपने HTML में <h4> का उपयोग किया है */
+        margin: 0;
+        font-size: 1.2em;
+        color: #555;
+    }
 
     .main-container,
     .cv-section {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        padding: 20px 0; /* body-frame के पैडिंग के ऊपर आंतरिक पैडिंग */
+        flex-grow: 1; /* यह कंटेनर उपलब्ध स्थान को भरने के लिए बढ़ेगा */
     }
 
     .section {
-      flex: 1 1 100%;
-      max-width: 800px;
+        flex: 1 1 100%; /* छोटे स्क्रीन पर पूरी चौड़ाई, बड़े पर फैलने दें */
+        max-width: 800px; /* सेक्शन की अधिकतम चौड़ाई */
     }
 
     .section-title {
-      font-size: 20px;
-      font-weight: bold;
-      text-transform: uppercase;
-      margin-bottom: 10px;
+        font-size: 20px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 10px;
     }
 
     .custom-line {
-      display: flex;
-      width: 230px;
-      margin-bottom: 20px;
+        display: flex;
+        width: 230px;
+        margin-bottom: 20px;
     }
 
     .line-thick {
-      flex: 1;
-      height: 3px;
-      background-color: #333;
+        flex: 1;
+        height: 3px;
+        background-color: #333;
     }
 
     .line-thin {
-      flex: 1;
-      height: 1px;
-      background-color: #333;
-      margin-left: 5px;
-      margin-top: 1px;
+        flex: 1;
+        height: 1px;
+        background-color: #333;
+        margin-left: 5px;
+        margin-top: 1px;
     }
 
     .summary-text,
-    .section-content {
-      font-size: 16px;
-      line-height: 1.5;
-      color: #444;
+    .section-content,
+    .section-content p,
+    .section-content ul li {
+        font-size: 16px;
+        line-height: 1.5;
+        color: #444;
     }
 
     .box {
-      /*border: 1px solid #333;*/
-      padding: 20px;
-      border-radius: 10px;
-      background-color: #e8edee;
-      background-color: #;
-      min-width: 250px;
-      flex: 1;
-      box-sizing: border-box;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+        padding: 30px; 
+        border-radius: 10px;
+        background-color: white; 
+        height: auto;
+        flex: 1 1 calc(50% - 20px); 
+        box-sizing: border-box; 
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        min-width: 280px; 
     }
 
     .box:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transform: translateY(-5px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
     footer {
-      text-align: center;
-      padding: 10px;
-      background-color: #e8edee;
-      color: rgb(20, 2, 2);
+        text-align: center;
+        padding: 10px;
+        background-color: #e8edee;
+        color: rgb(20, 2, 2);
+        border-top: 2px solid #ccc; 
+        margin-top: 20px; 
     }
 
     a {
-      color: #0000ee;
+        color: #0000ee;
+        text-decoration: none; 
     }
 
+    a:hover {
+        text-decoration: underline; 
+    }
+
+    /* प्रिंट के लिए विशेष स्टाइलिंग */
+    @media print {
+        body {
+            background: none;
+            margin: 0;
+            padding: 0;
+            display: block; 
+            -webkit-print-color-adjust: exact; 
+            print-color-adjust: exact;
+        }
+        .body-frame {
+            width: 210mm;
+            
+            min-height: auto; 
+            margin: 0;
+            box-shadow: none; 
+            border: none;
+            border-radius: 0; 
+            padding: 10mm 15mm;
+            page-break-after: auto;
+            page-break-inside: avoid; 
+            display: block; 
+        }
+        /* @page रूल का उपयोग करके प्रिंट मार्जिन सेट कर सकते हैं */
+        @page {
+            size: A4;
+            margin: 10mm 15mm;
+        }
+
+        header {
+            box-shadow: none; 
+            border-bottom: 2px solid #333; 
+            background-color: #e8edee; 
+        }
+        .box {
+            box-shadow: none; 
+            border-radius: 0; 
+            padding: 20px; 
+            background-color: #e8edee;
+            border: 1px solid #eee;
+        }
+
+        .body-frame, header, .box, footer {
+            background-color: #e8edee !important; 
+            color: #333 !important;
+        }
+    }
+
+   
     @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        text-align: center;
-      }
+        header {
+            flex-direction: column;
+            text-align: center;
+            align-items: center; 
+            justify-content: center;
+        }
+        .profile-info {
+            text-align: center; 
+        }
 
-      .main-container,
-      .cv-section {
-        flex-direction: column;
-        align-items: center;
-      }
+        .main-container,
+        .cv-section {
+            flex-direction: column;
+            align-items: center;
+            padding: 10px 0; 
+        }
+        .body-frame {
+            width: 95%; 
+            padding: 15px;
+            margin: 15px auto; 
+        }
+        .box {
+            flex: 1 1 100%; 
+            min-width: unset; 
+            padding: 25px; 
+        }
     }
-  
+    @media (max-width: 480px) {
+        .body-frame {
+            margin: 10px auto;
+            padding: 10px;
+        }
+
+        header h1 {
+            font-size: 1.5em;
+        }
+        header h4 {
+            font-size: 1em;
+        }
+
+        .profile img {
+            width: 100px;
+            height: 100px;
+        }
+        .section-title {
+            font-size: 18px;
+        }
+        .custom-line {
+            width: 180px;
+        }
+        .summary-text,
+        .section-content,
+        .section-content p,
+        .section-content ul li {
+            font-size: 14px;
+        }
+        .box {
+            padding: 20px;
+            border-radius: 15px;
+        }
+    }
+     footer {
+        font-size: 14px; 
+        padding: 15px; 
+        background-color: white; 
+        color: #333;
+        border-top: 1px solid #ccc; 
+        margin-top: 20px;
+        text-align: center; 
+        font-family: Arial, sans-serif; 
+    }
